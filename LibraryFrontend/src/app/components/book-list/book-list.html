@@ -1,0 +1,40 @@
+<div style="background: white; padding: 25px; border-radius: 8px; border: 1px solid #ddd; font-family: sans-serif;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h2 style="margin: 0; color: #2c3e50;">Active Catalog</h2>
+    <button (click)="fetchCatalog()" style="padding: 8px 15px; background-color: #7f8c8d; color: white; border: none; border-radius: 4px; cursor: pointer;">
+      🔄 Refresh Catalog
+    </button>
+  </div>
+
+  <table style="width: 100%; border-collapse: collapse; text-align: left;">
+    <thead>
+      <tr style="background-color: #ecf0f1; color: #2c3e50;">
+        <th style="padding: 12px; border-bottom: 2px solid #bdc3c7;">Title</th>
+        <th style="padding: 12px; border-bottom: 2px solid #bdc3c7;">Author</th>
+        <th style="padding: 12px; border-bottom: 2px solid #bdc3c7;">Genre</th>
+        <th style="padding: 12px; border-bottom: 2px solid #bdc3c7;">ISBN</th>
+        <th style="padding: 12px; border-bottom: 2px solid #bdc3c7;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books" style="border-bottom: 1px solid #ecf0f1;">
+        <td style="padding: 12px; font-weight: bold;">{{book.title}}</td>
+        <td style="padding: 12px;">{{book.author}}</td>
+        <td style="padding: 12px;">{{book.genre}}</td>
+        <td style="padding: 12px; color: #7f8c8d; font-size: 0.9rem;">{{book.isbn}}</td>
+        <td style="padding: 12px;">
+          <span [style.backgroundColor]="book.available ? '#dcfce7' : '#fee2e2'" 
+                [style.color]="book.available ? '#15803d' : '#ef4444'" 
+                style="padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold;">
+            {{ book.available ? 'AVAILABLE' : 'CHECKED OUT' }}
+          </span>
+        </td>
+      </tr>
+      <tr *ngIf="books.length === 0">
+        <td colspan="5" style="padding: 30px; text-align: center; color: #7f8c8d; font-style: italic;">
+          The catalog is currently empty. Add a book to get started!
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

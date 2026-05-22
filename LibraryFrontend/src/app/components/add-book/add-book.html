@@ -1,0 +1,26 @@
+<div style="background: white; padding: 25px; border-radius: 8px; border: 1px solid #ddd; max-width: 500px; margin: 0 auto; font-family: sans-serif;">
+  <h2 style="margin-top: 0; color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px;">Register New Book</h2>
+  
+  <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+    <label style="font-weight: bold; color: #34495e;">Book Title *</label>
+    <input [(ngModel)]="newBook.title" placeholder="e.g., The Great Gatsby" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+
+    <label style="font-weight: bold; color: #34495e;">Author *</label>
+    <input [(ngModel)]="newBook.author" placeholder="e.g., F. Scott Fitzgerald" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+
+    <div style="display: flex; gap: 15px;">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
+        <label style="font-weight: bold; color: #34495e;">ISBN</label>
+        <input [(ngModel)]="newBook.isbn" placeholder="e.g., 978-3-16-148410-0" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
+        <label style="font-weight: bold; color: #34495e;">Genre</label>
+        <input [(ngModel)]="newBook.genre" placeholder="e.g., Fiction" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+      </div>
+    </div>
+
+    <button (click)="saveBook()" style="margin-top: 15px; padding: 12px; background-color: #2980b9; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">
+      Save to Database
+    </button>
+  </div>
+</div>

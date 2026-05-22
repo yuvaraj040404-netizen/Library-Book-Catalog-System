@@ -1,0 +1,12 @@
+<header style="background-color: #1e293b; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); font-family: sans-serif;">
+  <h1 style="color: white; margin: 0; font-size: 1.25rem; letter-spacing: 0.5px;">📚 Library Catalog Pro</h1>
+  
+  <nav style="display: flex; gap: 20px;">
+    <a routerLink="/" style="color: #cbd5e1; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; transition: 0.2s;">Catalog Dashboard</a>
+    <a routerLink="/add-book" style="background-color: #27ae60; color: white; text-decoration: none; font-weight: bold; padding: 8px 16px; border-radius: 6px; transition: 0.2s;">+ Add Book</a>
+  </nav>
+</header>
+
+<main style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+  <router-outlet></router-outlet>
+</main>
